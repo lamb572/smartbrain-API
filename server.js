@@ -3,20 +3,18 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 const { response } = require('express');
-
+const { Client } = require('pg');
 
 const register = require('./controllers/register');
 const signIn = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image  = require('./controllers/image');
 
-const db = knex({
+const db = new Client({
   connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
-    
-    
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 const app = express();
