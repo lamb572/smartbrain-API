@@ -11,7 +11,7 @@ const profile = require('./controllers/profile');
 const image  = require('./controllers/image');
 
 const db = knex({
-  connectionString: process.env.postgresql-cubic-27884,
+  connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false
     }
