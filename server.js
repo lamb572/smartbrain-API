@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 const { response } = require('express');
+const { Client } = require('pg');
 
 const register = require('./controllers/register');
 const signIn = require('./controllers/signin');
@@ -10,14 +11,12 @@ const profile = require('./controllers/profile');
 const image  = require('./controllers/image');
 
 const db = knex({
-    client: 'pg',
-    connection: {
-      host : '127.0.0.1',
-      user : 'lukebeach',
-      password : '',
-      database : 'smart-brain'
+  connectionString: process.env.postgresql-cubic-27884,
+  ssl: {
+    rejectUnauthorized: false
+  }
     }
-});
+);
 
 const app = express();
 
