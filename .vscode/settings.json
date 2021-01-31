@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/56b36823-52e5-4a71-a6b5-813597fdac5e/resourceGroups/portfolio-backend/providers/Microsoft.Web/sites/smartbrain-api",
+    "appService.deploySubpath": "."
+}

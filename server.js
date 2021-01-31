@@ -13,10 +13,12 @@ const image  = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection:{
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    host:'foodsite-backend.postgres.database.azure.com',
+    user:"psqladmin@foodsite-backend",
+    database:'smartbrain', 
+    password:"hjQwxFjRxdBw*MJ8",
+    port:'5432',
+    ssl :true 
   }  
 });
 
